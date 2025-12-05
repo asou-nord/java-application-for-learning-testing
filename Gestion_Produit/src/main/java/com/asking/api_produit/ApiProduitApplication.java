@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
 @SpringBootApplication
-public class ApiProduitApplication 
+public class    ApiProduitApplication
 {
 
 	public static void main(String[] args) 

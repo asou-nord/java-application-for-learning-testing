@@ -17,12 +17,6 @@ import io.github.cdimascio.dotenv.Dotenv;
 public class SecConfiguration extends WebSecurityConfigurerAdapter {
 
 
-    @Bean
-    public Dotenv dotenv() {
-        return Dotenv.configure().filename(".env").load();
-    }
-    
-
     // Définition du service de détails de l'utilisateur
     @Bean
     public UserDetailsService userDetailsService() {
@@ -48,8 +42,8 @@ public class SecConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         // Configuration de l'authentification
         auth.authenticationProvider(authenticationProvider());
-        auth.inMemoryAuthentication().passwordEncoder(passwordEncoder()).withUser("Charbel")
-                .password(passwordEncoder().encode(dotenv().get("ADMIN_PASSWORD"))).roles("admin");
+        // auth.inMemoryAuthentication().passwordEncoder(passwordEncoder()).withUser("Charbel")
+        //         .password(passwordEncoder().encode(dotenv().get("ADMIN_PASSWORD"))).roles("admin");
     }
 
     @Override

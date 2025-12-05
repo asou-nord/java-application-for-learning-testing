@@ -14,8 +14,11 @@
 	<name>GestionDeProduits</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>17</java.version>
-	</properties>
+
+            <java.version>17</java.version>
+            <selenium.version>4.27.0</selenium.version>
+
+    </properties>
 	<dependencies>
 
 		<dependency>
@@ -32,6 +35,19 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+            <!-- Other dependencies might go here -->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>4.27.0</version> <!-- Use the latest version from Maven Central -->
+            </dependency>
 
 		
  		<dependency>
