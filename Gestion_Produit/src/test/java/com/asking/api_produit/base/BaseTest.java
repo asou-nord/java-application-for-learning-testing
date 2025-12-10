@@ -39,4 +39,12 @@ public class BaseTest {
 
         }
     }
+
+    public void takeABreak() {
+        try {
+            Thread.sleep(5000); // Wait 5 seconds
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

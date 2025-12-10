@@ -36,10 +36,13 @@ public class AddProductTest extends BaseTest {
                 .setProductExpirationDate("10/10/2026")
                 .setSupplierName("supplier1");
 
+        // let's sleep a moment to see if the data are correctly inserted:
+        takeABreak();
+
         // add the product:
         addProductPage.clickAddButton();
 
-        // this will directs us toward the page of products:
+        // this will direct us toward the page of products:
         DashboardPage dashboardPage1 = new DashboardPage(driver);
 
         // check if the product was added successfully:
