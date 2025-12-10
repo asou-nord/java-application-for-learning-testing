@@ -20,8 +20,8 @@ public class LogoutTest extends BaseTest {
 
         // that directs us toward the login page:
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.SetEmail("ali@gmail.com");
-        loginPage.SetPassword("123456");
+        loginPage.setEmail("ali@gmail.com");
+        loginPage.setPassword("123456");
         loginPage.clickLoginButton();
 
         // are we really logged in?
@@ -33,7 +33,15 @@ public class LogoutTest extends BaseTest {
 
     @Test
     public void logoutTest(){
-        loginTest();
+//        loginTest(); // don't do this, this is antipattern design.
+        driver.get("http://localhost:" + port + "/");
+
+        new LandingPage(driver).clickLogin();
+
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.setEmail("ali@gmail.com");
+        loginPage.setPassword("123456");
+        loginPage.clickLoginButton();
 
         // If logged in, we are in the dashboard page:
         DashboardPage dashboardPage = new DashboardPage(driver);
@@ -49,8 +57,6 @@ public class LogoutTest extends BaseTest {
         Assertions.assertNotNull(currentUrl);
         boolean isBackAtLogin = currentUrl.equals("http://localhost:" + port + "/");
         Assertions.assertTrue(isBackAtLogin,
-                "We are not in the landing page!");
-
-
+                "Did not return to landing page. Current URL: " + currentUrl);
     }
 }

@@ -20,12 +20,12 @@ public class LoginPage {
     // ACTIONS:
 
     // Set Email:
-    public void SetEmail(String email) {
+    public void setEmail(String email) {
         driver.findElement(emailInput).sendKeys(email);
     }
 
     // Set Password:
-    public void SetPassword(String password){
+    public void setPassword(String password){
         driver.findElement(passwordInput).sendKeys(password);
     }
 
