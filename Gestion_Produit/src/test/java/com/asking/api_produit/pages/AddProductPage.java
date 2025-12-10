@@ -10,7 +10,7 @@ public class AddProductPage {
     private final WebDriver driver;
 
     // LOCATORS:
-    private final By productName = By.name("name");
+    private final By productName = By.name("nom");
     private final By productPrice = By.name("prix");
     private final By productPriceCurrency = By.tagName("select");
     private final By productTax = By.name("taxe");
@@ -27,51 +27,59 @@ public class AddProductPage {
     // ACTIONS:
 
     // Set Product name:
-    public void setProductName(String inputProductName){
+    public AddProductPage setProductName(String inputProductName){
         driver.findElement(productName).sendKeys(inputProductName);
+        return this;
     }
 
     // Set Product Price:
-    public void setProductPrice(int inputProductPrice){
+    public AddProductPage setProductPrice(int inputProductPrice){
         driver.findElement(productPrice).sendKeys(String.valueOf(inputProductPrice)); // sendKeys katakhed ghi strings? so just cast it? I guess so.
+        return this;
     }
 
     // Set the product price currency:
-    public void setProductPriceCurrency(String procductPriceCurrency){
+    public AddProductPage setProductPriceCurrency(int procductPriceCurrencyIndex){
         WebElement dropdownElement = driver.findElement(productPriceCurrency);
 
-        Select CurrencyDropdown = new Select(dropdownElement);
-        CurrencyDropdown.selectByVisibleText(procductPriceCurrency);
+        Select currencyDropdown = new Select(dropdownElement);
+        currencyDropdown.selectByIndex(procductPriceCurrencyIndex);
+        return this;
     }
 
     // Set Tax on product:
-    public void setProductTax(int inputProductTax){
+    public AddProductPage setProductTax(int inputProductTax){
         driver.findElement(productTax).sendKeys(String.valueOf(inputProductTax));
+        return this;
     }
 
     // Set the date:
-    public void setProductExpirationDate(String inputProductExpirationDate){
+    public AddProductPage setProductExpirationDate(String inputProductExpirationDate){
         // could we just treat it as a normal input? let's see:
         driver.findElement(productDatePickerButton).sendKeys(inputProductExpirationDate);
 
 //      if not we would have to try the picker method:
 //      WebElement datePicker = driver.findElement(productDatePickerButton);
 //      datePicker.click();
+        return this;
     }
 
 
     // Set the Supplier:
-    public void setSupplierName(String supplierName){
+    public AddProductPage setSupplierName(String supplierName){
         driver.findElement(productSupplier).sendKeys(supplierName);
+        return this;
     }
 
     // Set the product Picture:
-    public void setProductPicture(String inputProductPicturePath){
+    public AddProductPage setProductPicture(String inputProductPicturePath){
         driver.findElement(productPicture).sendKeys(inputProductPicturePath);
+        return this;
     }
 
     // Press Add product:
-    public void clickAddButton(){
+    public AddProductPage clickAddButton(){
         driver.findElement(addProductButton).click();
+        return this;
     }
 }

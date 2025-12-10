@@ -22,7 +22,7 @@ public class DashboardPage {
     // ACTIONS:
 
     // Click Add Product link:
-    public void addProduct(){
+    public void clickAddProduct(){
         driver.findElement(addProductLink).click();
     }
 

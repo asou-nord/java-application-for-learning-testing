@@ -33,4 +33,11 @@ public class LoginPage {
     public void clickLoginButton(){
         driver.findElement(loginButton).click();
     }
+
+    // HELPER METHOD: combine the two actions for setting email/password into one:
+    public void loginAs(String email, String password){
+        setEmail(email);
+        setPassword(password);
+        clickLoginButton();
+    }
 }

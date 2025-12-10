@@ -22,9 +22,9 @@ public class BaseTest {
     public void setUp() {
         // Options for our driver:
         FirefoxOptions firefoxOptions = new FirefoxOptions();
-        firefoxOptions.addArguments("--headless");
+//        firefoxOptions.addArguments("--headless");
         firefoxOptions.addArguments("--disable-gpu");
-//        firefoxOptions.addArguments("--disable-extensions");
+        firefoxOptions.addArguments("--disable-extensions");
 
         driver = new FirefoxDriver(firefoxOptions);
 
