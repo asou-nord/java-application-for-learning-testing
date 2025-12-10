@@ -7,7 +7,7 @@ public class LandingPage {
 
     // LOCATORS:
     private WebDriver driver;
-    private By ConnectButton = By.xpath("//button[text='Se connecter']"); // lqa ay bytton li fiha text Se connecter!
+    private By connectButton = By.xpath("//button[text()='Se connecter']"); // lqa ay bytton li fiha text Se connecter!
 
     // CONSTRUCTOR:
     public LandingPage(WebDriver driver) {
@@ -17,7 +17,7 @@ public class LandingPage {
     // ACTIONS:
 
     // Click the login button in the landing page:
-    public void ClickLogin(){
-        driver.findElement(ConnectButton).click();
+    public void clickLogin(){
+        driver.findElement(connectButton).click();
     }
 }

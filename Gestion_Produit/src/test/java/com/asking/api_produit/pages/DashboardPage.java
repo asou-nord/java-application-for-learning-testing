@@ -11,6 +11,7 @@ public class DashboardPage {
     private By menuButton = By.className("navbar-toggler");
     private By logoutLink = By.linkText("Se déconnecter");
     private By productSearchBar = By.name("recherche");
+    private By productSearchButton = By.xpath("//button[@class='btn btn-success']");
 
 
     // CONSTRUCTOR:
@@ -41,4 +42,8 @@ public class DashboardPage {
         driver.findElement(productSearchBar).sendKeys(productNameToFind);
     }
 
+    // Click search after filling the search bar:
+    public void clickSearchButton(){
+        driver.findElement(productSearchButton).click();
+    }
 }

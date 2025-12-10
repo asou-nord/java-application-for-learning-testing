@@ -5,8 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-
-public class AddProductPage {
+public class ProductUpdatePage {
     private final WebDriver driver;
 
     // LOCATORS:
@@ -20,7 +19,7 @@ public class AddProductPage {
     private final By addProductButton = By.xpath("//button[text()='Ajouter']");
 
     // CONSTRUCTOR:
-    public AddProductPage(WebDriver driver) {
+    public ProductUpdatePage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -58,7 +57,6 @@ public class AddProductPage {
 //      WebElement datePicker = driver.findElement(productDatePickerButton);
 //      datePicker.click();
     }
-
 
     // Set the Supplier:
     public void setSupplierName(String supplierName){
